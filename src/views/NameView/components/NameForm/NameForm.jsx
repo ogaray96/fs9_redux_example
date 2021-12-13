@@ -1,7 +1,13 @@
 import React from 'react';
-import { string, func } from 'prop-types';
+import { string } from 'prop-types';
+import { connect } from 'react-redux';
+import { setNameValue } from '../../../../actions';
 
-const NameForm = ({ value, handleChange }) => {
+const NameForm = ({ value, dispatch }) => {
+  const handleChange = (e) => {
+    dispatch(setNameValue(e.target.value));
+  };
+
   return (
     <form>
       <input
@@ -15,7 +21,8 @@ const NameForm = ({ value, handleChange }) => {
 
 NameForm.propTypes = {
   value: string.isRequired,
-  handleChange: func.isRequired,
 };
 
-export default NameForm;
+export default connect((state) => ({ value: state.nameReducer.name }))(
+  NameForm,
+);

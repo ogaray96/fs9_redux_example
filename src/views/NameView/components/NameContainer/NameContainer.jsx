@@ -1,6 +1,7 @@
 import React from 'react';
 import { string } from 'prop-types';
 import './styles.css';
+import { connect } from 'react-redux';
 
 const NameContainer = ({ value }) => {
   return (
@@ -18,4 +19,6 @@ NameContainer.defaultProps = {
   value: '',
 };
 
-export default NameContainer;
+export default connect((state) => ({ value: state.nameReducer.name }))(
+  NameContainer,
+);

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import NameFormProvider from '../../utils/hooks/NameFormProvider';
 
 import { NameContainer, NameForm } from './components';
 
@@ -12,10 +13,12 @@ const NameView = () => {
   };
 
   return (
-    <div className="name-view">
-      <NameContainer value={value} />
-      <NameForm handleChange={handleChange} value={value} />
-    </div>
+    <NameFormProvider>
+      <div className="name-view">
+        <NameContainer value={value} />
+        <NameForm handleChange={handleChange} value={value} />
+      </div>
+    </NameFormProvider>
   );
 };
 

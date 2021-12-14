@@ -1,21 +1,17 @@
 import React from 'react';
-import { string } from 'prop-types';
+
+import useNameFormContext from '../../../../utils/hooks/useNameFormContext';
+
 import './styles.css';
 
-const NameContainer = ({ value }) => {
+const NameContainer = () => {
+  const { store } = useNameFormContext();
+
   return (
     <div className="name-container">
-      <h4>{value}</h4>
+      <h4>{store.name}</h4>
     </div>
   );
-};
-
-NameContainer.propTypes = {
-  value: string,
-};
-
-NameContainer.defaultProps = {
-  value: '',
 };
 
 export default NameContainer;

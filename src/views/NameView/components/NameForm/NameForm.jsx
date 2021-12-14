@@ -1,21 +1,19 @@
 import React from 'react';
-import { string, func } from 'prop-types';
 
-const NameForm = ({ value, handleChange }) => {
+import useNameFormContext from '../../../../utils/hooks/useNameFormContext';
+
+const NameForm = () => {
+  const { store, handleChange } = useNameFormContext();
+
   return (
     <form>
       <input
         placeholder="Ingrese su nombre"
         onChange={handleChange}
-        value={value}
+        value={store.name}
       />
     </form>
   );
-};
-
-NameForm.propTypes = {
-  value: string.isRequired,
-  handleChange: func.isRequired,
 };
 
 export default NameForm;

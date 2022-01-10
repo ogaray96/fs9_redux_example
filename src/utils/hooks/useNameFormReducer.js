@@ -14,9 +14,9 @@ const initialValues = {
   name: '',
 };
 
-function useFormReducer() {
+function useNameFormReducer() {
   return useReducer(nameReducer, initialValues);
 }
 
-module.exports = useFormReducer;
+module.exports = useNameFormReducer;
 

@@ -9,8 +9,8 @@ const NameView = () => {
   return (
     <NameFormProvider>
       <div className="name-view">
-        <NameContainer value={value} />
-        <NameForm handleChange={handleChange} value={value} />
+        <NameContainer />
+        <NameForm />
       </div>
     </NameFormProvider>
   );

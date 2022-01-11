@@ -1,15 +1,16 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
-const NamesList = () => {
-  const names = ['Peter Parker', 'Harry Osborn', 'Miles Morales'];
-
+const NamesList = ({ names }) => {
   return (
     <table>
-      {names.map((name) => (
-        <tr>
-          <td>{name}</td>
-        </tr>
-      ))}
+      <tbody>
+        {names.map((name) => (
+          <tr key={name}>
+            <td>{name}</td>
+          </tr>
+        ))}
+      </tbody>
     </table>
   );
 };
@@ -18,4 +19,6 @@ NamesList.propTypes = {};
 
 NamesList.defaultProps = {};
 
-export default NamesList;
+export default connect((state) => ({ names: state.nameReducer.names }))(
+  NamesList,
+);

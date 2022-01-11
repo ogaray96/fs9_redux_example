@@ -1,7 +1,7 @@
 import React from 'react';
 import { string } from 'prop-types';
 import { connect } from 'react-redux';
-import { setNameValue } from '../../../../actions';
+import { addName, setNameValue } from '../../../../actions';
 
 const NameForm = ({ value, dispatch }) => {
   const handleChange = (e) => {
@@ -10,6 +10,7 @@ const NameForm = ({ value, dispatch }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    dispatch(addName(value));
   };
 
   return (

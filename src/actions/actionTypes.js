@@ -1,3 +1,4 @@
 const SET_NAME_VALUE = 'SET_NAME_VALUE';
+const ADD_NAME = 'ADD_NAME';
 
-export { SET_NAME_VALUE };
+export { SET_NAME_VALUE, ADD_NAME };

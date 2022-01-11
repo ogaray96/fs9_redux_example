@@ -5,11 +5,13 @@ const NamesList = () => {
 
   return (
     <table>
-      {names.map((name) => (
-        <tr>
-          <td>{name}</td>
-        </tr>
-      ))}
+      <tbody>
+        {names.map((name) => (
+          <tr key={name}>
+            <td>{name}</td>
+          </tr>
+        ))}
+      </tbody>
     </table>
   );
 };

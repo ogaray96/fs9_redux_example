@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { NameContainer, NameForm } from './components';
+import { NameContainer, NameForm, NamesList } from './components';
 
 import './styles.css';
 
@@ -9,6 +9,7 @@ const NameView = () => {
     <div className="name-view">
       <NameContainer />
       <NameForm />
+      <NamesList />
     </div>
   );
 };

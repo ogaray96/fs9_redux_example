@@ -8,13 +8,18 @@ const NameForm = ({ value, dispatch }) => {
     dispatch(setNameValue(e.target.value));
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
+
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <input
         placeholder="Ingrese su nombre"
         onChange={handleChange}
         value={value}
       />
+      <button type="submit">Agregar</button>
     </form>
   );
 };
